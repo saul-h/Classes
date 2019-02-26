@@ -1,4 +1,3 @@
-
 public class Cheetos extends Product {
 	
 	public Cheetos() {

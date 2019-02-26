@@ -1,4 +1,3 @@
-
 public abstract class Coin {
 	
 	protected int value; // in cents

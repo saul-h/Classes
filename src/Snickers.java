@@ -1,4 +1,3 @@
-
 public class Snickers extends Product{
 	
 	public Snickers() {
