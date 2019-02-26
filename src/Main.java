@@ -12,6 +12,13 @@ public class Main {
 		vendingMachine.addItem(new Starburst(), 6);
 		vendingMachine.addItem(new Cheetos(), 3);
 		
+		System.out.println("You have a balance of: ");
+		System.out.println(user);
+		System.out.println();
+		
+		System.out.println("Available items to buy: ");
+		System.out.println(vendingMachine);
+		
 	}
 
 }
