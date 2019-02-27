@@ -17,7 +17,7 @@ public class Inventory {
 	}
 	
 	public int getProductCost() {
-		return product.cost;
+		return product.getCost();
 	}
 	
 }
