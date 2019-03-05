@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
+	
+	static Scanner input;
 
 	public static void main(String[] args) {
 		
-		Scanner input = new Scanner(System.in);
+		input = new Scanner(System.in);
 		
 		// Create Vending Machine object
 		VendingMachine vendingMachine = new VendingMachine();
@@ -26,7 +28,7 @@ public class Main {
 			System.out.println(vendingMachine);
 			break;
 		case "i":
-			//TODO: Insert coin to vending machine
+			insertCoin();
 			break;
 		case "b":
 			//TODO: Remove product from vending machine and remove inserted coins
@@ -36,6 +38,26 @@ public class Main {
 			break;
 		case "r":
 			//TODO: Remove inserted coins in vending machine
+			break;
+		}
+	}
+	
+	static void insertCoin() {
+		System.out.println("A) Penny @ 0.01\n" + 
+				"B) Nickel @ 0.05\n" + 
+				"C) Dime @ 0.10\n" + 
+				"D) Quarter @ 0.25");
+		
+		String resp = input.nextLine();
+		
+		switch(resp) {
+		case "a":
+			break;
+		case "b":
+			break;
+		case "c":
+			break;
+		case "d":
 			break;
 		}
 	}
