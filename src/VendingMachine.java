@@ -3,9 +3,11 @@ import java.util.ArrayList;
 public class VendingMachine {
 	
 	private ArrayList<Inventory> inventory;
+	private ArrayList<Coin> coins;
 	
 	public VendingMachine() {
 		inventory = new ArrayList<Inventory>();
+		coins = new ArrayList<Coin>();
 	}
 	
 	public void addItem(Product product, int quantity) {
@@ -30,5 +32,19 @@ public class VendingMachine {
 			body += String.format("%-10s%8d%10.2f%n", item.getProduct().getName(), item.getQuantity(), (double)item.getProductCost() / 100f);
 		}
 		return header + body;
+	}
+	
+	public void insertCoin(Coin c) {
+		coins.add(c);
+	}
+	
+	public int getBalance() {
+		int bal = 0;
+		
+		for(Coin coin: coins) {
+			bal += coin.getValue();
+		}
+		
+		return bal;
 	}
 }
