@@ -34,6 +34,19 @@ public class VendingMachine {
 		return header + body;
 	}
 	
+	public void clearCoins() {
+		
+		int size = coins.size();
+		
+		for(int i = 0; i < size; i++) {
+			coins.remove(0);
+		}
+	}
+	
+	public ArrayList<Inventory> getInventory(){
+		return inventory;
+	}
+	
 	public void insertCoin(Coin c) {
 		coins.add(c);
 	}
