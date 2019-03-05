@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -33,13 +34,13 @@ public class Main {
 				insertCoin();
 				break;
 			case "b":
-				//TODO: Remove product from vending machine and remove inserted coins
+				buyProduct();
 				break;
 			case "a":
 				addProduct();
 				break;
 			case "r":
-				//TODO: Remove inserted coins in vending machine
+				vendingMachine.clearCoins();
 				break;
 			case "q":
 				return;
@@ -72,6 +73,28 @@ public class Main {
 		
 		double balance = (double)vendingMachine.getBalance() / 100.0f;
 		System.out.println("Balance: " + balance);
+		
+	}
+	
+	static void buyProduct() {
+		
+		ArrayList<Inventory> inv = vendingMachine.getInventory();
+		System.out.printf("%s%n%n","Select which product you would like to buy: ");
+		System.out.printf("  %-10s%8s%10s%n", "Name", "Quantity", "Price");
+		for(int i = 0; i < inv.size(); i++) {
+			System.out.printf("%d.%-10s%8d%10.2f%n", i+1, inv.get(i).getProduct().getName(), inv.get(i).getQuantity(),(double)inv.get(i).getProductCost() / 100.0f);
+		}
+		
+		int num = Integer.parseInt(input.nextLine());
+		Product selectedProduct = inv.get(num-1).getProduct();
+		
+		if(vendingMachine.getBalance() > selectedProduct.getCost()) {
+			vendingMachine.clearCoins();
+			vendingMachine.getInventory().get(num-1).removeQuantity(1);
+			System.out.println("You bought " + selectedProduct.getName());
+		}else {
+			System.out.println("Insufficient funds.");
+		}
 		
 	}
 	
