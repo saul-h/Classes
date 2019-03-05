@@ -30,6 +30,10 @@ public class Inventory {
 		this.quantity = q;
 	}
 	
+	public void removeQuantity(int x) {
+		this.quantity -= x;
+	}
+	
 	public int getProductCost() {
 		return product.getCost();
 	}
