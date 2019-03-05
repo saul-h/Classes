@@ -1,6 +1,9 @@
 public abstract class Coin {
 	
-	protected int value; // in cents
+	/**
+	 * value in cents
+	 */
+	protected int value;
 	
 	public void setValue(int v) {
 		this.value = v;
@@ -10,4 +13,7 @@ public abstract class Coin {
 		return this.value;
 	}
 	
+	public String toString() {
+		return value + " cents";
+	}
 }
