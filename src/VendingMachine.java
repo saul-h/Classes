@@ -1,22 +1,44 @@
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author Saul
+ * @author Abel
+ */
 public class VendingMachine {
 	
+	/**
+	 * List of Inventory (Product and quantity) objects 
+	 */
 	private ArrayList<Inventory> inventory;
 	
+	/**
+	 * Constructs a VendingMachine object with no products contained within.
+	 */
 	public VendingMachine() {
 		inventory = new ArrayList<Inventory>();
 	}
 	
+	/**
+	 * Adds the specified quantity of a Product to the VendingMachine object. If there is
+	 * already a Product of the same name contained in the VendingMachine object then the
+	 * quantity gets added into the inventory for that product (so as to not have multiple
+	 * ArrayList objects with the same name).
+	 * @param product Product to be added
+	 * @param quantity Quantity of Product to be added
+	 */
 	public void addItem(Product product, int quantity) {
 		boolean itemMatched = false;
 		for (Inventory items: inventory) {
+			// checks if the Product has the same name as a product in inventory
 			if (items.toString().startsWith(product.getName())) {
+				// adds quantity of object to 
 				items.setQuantity(items.getQuantity() + quantity);
 				itemMatched = true;
 				break;
 			}
 		}
+		// if item did match then add a new Inventory object for the product to VendingMachine
 		if (!itemMatched)
 			inventory.add(new Inventory(product, quantity));
 	}

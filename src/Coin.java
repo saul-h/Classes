@@ -2,6 +2,8 @@
  * The abstract Coin class is a template for the Coin object. This coin object has a default
  * value of zero cents and is the superclass for a specific coin object (that is a coin which
  * has a name and value) such as a Quarter, Dime, or Nickel
+ * @author Saul
+ * @author Abel
  */
 public abstract class Coin {
 	

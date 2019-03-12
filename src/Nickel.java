@@ -1,5 +1,7 @@
 /**
  * Extends Coin class. This is a coin of type Nickel with value 5 cents.
+ * @author Saul
+ * @author Abel
  */
 public class Nickel extends Coin {
 	/**

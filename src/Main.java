@@ -1,3 +1,12 @@
+/*
+ * Abel Acosta
+ * Saul Hernandez
+ * March 11, 2019
+ * Purpose: This program demonstrates the use of classes by simulating a vending machine.
+ * The vending machine can dispense products to a customer in exchange for money. Money and
+ * Products can be added and removed from the VendingMachine (as if by an operator from the
+ * VendingMachine owner). 
+ */
 import java.util.Scanner;
 
 public class Main {
