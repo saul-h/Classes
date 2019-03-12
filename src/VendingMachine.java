@@ -11,12 +11,14 @@ public class VendingMachine {
 	 * List of Inventory (Product and quantity) objects 
 	 */
 	private ArrayList<Inventory> inventory;
+	private ArrayList<Coin> coins;
 	
 	/**
 	 * Constructs a VendingMachine object with no products contained within.
 	 */
 	public VendingMachine() {
 		inventory = new ArrayList<Inventory>();
+		coins = new ArrayList<Coin>();
 	}
 	
 	/**
@@ -52,5 +54,32 @@ public class VendingMachine {
 			body += String.format("%-10s%8d%10.2f%n", item.getProduct().getName(), item.getQuantity(), (double)item.getProductCost() / 100f);
 		}
 		return header + body;
+	}
+	
+	public void clearCoins() {
+		
+		int size = coins.size();
+		
+		for(int i = 0; i < size; i++) {
+			coins.remove(0);
+		}
+	}
+	
+	public ArrayList<Inventory> getInventory(){
+		return inventory;
+	}
+	
+	public void insertCoin(Coin c) {
+		coins.add(c);
+	}
+	
+	public int getBalance() {
+		int bal = 0;
+		
+		for(Coin coin: coins) {
+			bal += coin.getValue();
+		}
+		
+		return bal;
 	}
 }

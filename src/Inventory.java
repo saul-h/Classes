@@ -61,6 +61,10 @@ public class Inventory {
 	 * Returns the cost (in cents) of the product
 	 * @return the cost (in cents) of the product
 	 */
+	public void removeQuantity(int x) {
+		this.quantity -= x;
+	}
+  
 	public int getProductCost() {
 		return product.getCost();
 	}
